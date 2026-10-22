@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Hunyuan 3D Translator (EN/IT)
 // @namespace    https://github.com/amp-ita/hunyuan3d-it
-// @version      1.3.2
+// @version      1.3.3
 // @description  Translates the 3d.hunyuan.tencent.com interface into English or Italian (built-in dictionary, Chrome's on-device translator as fallback). Alt+Shift+L switches language.
 // @author       Marco
 // @match        https://3d.hunyuan.tencent.com/*
@@ -36,19 +36,24 @@
 /* Il sito usa word-break: break-all (pensato per il cinese), che spezza le
    parole italiane a caso ("skinnin-g"). Si va a capo solo tra parole;
    una parola troppo lunga viene sillabata in italiano. */
-html[lang="it"] * {
+:is(html[lang="it"], html[lang="en"]) * {
   word-break: normal !important;
   overflow-wrap: break-word !important;
 }
-html[lang="it"] .t-popup__content {
+:is(html[lang="it"], html[lang="en"]) .t-popup__content {
   hyphens: auto;
 }
 
 /* Etichette del menu laterale centrate */
-html[lang="it"] a[href^="/studio/creation/"],
-html[lang="it"] a[href^="/studio/creation/"] * {
+:is(html[lang="it"], html[lang="en"]) a[href^="/studio/creation/"],
+:is(html[lang="it"], html[lang="en"]) a[href^="/studio/creation/"] * {
   text-align: center !important;
   hyphens: manual !important;
+}
+
+/* Etichette delle schede nella finestra multi-vista centrate */
+:is(html[lang="it"], html[lang="en"]) [class*="gradient-dashed-box"] span[class*="text-[12px]"] {
+  text-align: center;
 }
 `;
   (document.head || document.documentElement).appendChild(s);
