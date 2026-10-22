@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Hunyuan 3D in italiano
 // @namespace    https://github.com/amp-ita/hunyuan3d-it
-// @version      1.3.0
+// @version      1.3.1
 // @description  Traduce l'interfaccia di 3d.hunyuan.tencent.com in italiano (dizionario + traduttore integrato di Chrome come fallback).
 // @author       Marco
 // @match        https://3d.hunyuan.tencent.com/*
@@ -236,7 +236,32 @@ window.HY_DICT = {
   "前视图": "Vista frontale",
   "后视图": "Vista posteriore",
   "积分": "Crediti",
-  "次": " volte"
+  "次": " volte",
+
+  // --- Stati, upload e multi-vista ---
+  "加载中...": "Caricamento...",
+  "您未选择模型哦~": "Nessun modello selezionato",
+  "请在右侧资产库中选择或上传模型": "Scegli o carica un modello dalla libreria a destra",
+  "支持FBX, GLB, OBJ格式，布线规整，面数小于3万，组件数量小于100个":
+    "Formati supportati: FBX, GLB, OBJ. Topologia pulita, meno di 30.000 facce, meno di 100 componenti",
+  "图片检测中...": "Verifica dell'immagine...",
+  "上传中...": "Caricamento...",
+  "法线": "Normali",
+  "智能展开UV": "Unwrap UV intelligente",
+  "支持png/jpg/jpeg/webp格式，文件大小最大不超过10M，分辨率最低要求128*128，最高限制4096*4096":
+    "Formati supportati: png/jpg/jpeg/webp. Dimensione massima 10 MB, risoluzione da 128*128 a 4096*4096",
+  "敬请期待": "In arrivo",
+  "添加多视图（Min2，Max8）": "Aggiungi viste (min 2, max 8)",
+  "添加多视图": "Aggiungi viste",
+  "3D角色模型预览": "Anteprima del personaggio 3D",
+  "上传正图": "Carica vista frontale",
+  "上传背图": "Carica vista posteriore",
+  "上传左图": "Carica vista sinistra",
+  "上传右图": "Carica vista destra",
+  "上传顶图": "Carica vista dall'alto",
+  "上传底图": "Carica vista dal basso",
+  "上传左45°图": "Carica vista sinistra 45°",
+  "上传右45°图": "Carica vista destra 45°"
 };
 
 (() => {
