@@ -1,0 +1,33 @@
+/* Notifica delle scorciatoie (Alt+Shift+O / Alt+Shift+M) */
+.hy-it-toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2147483647;
+  padding: 8px 14px;
+  border-radius: 8px;
+  background: #222;
+  color: #fff;
+  font: 13px/1.4 system-ui, sans-serif;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, .3);
+  pointer-events: none;
+}
+
+/* Il sito usa word-break: break-all (pensato per il cinese), che spezza le
+   parole italiane a caso ("skinnin-g"). Si va a capo solo tra parole;
+   una parola troppo lunga viene sillabata in italiano. */
+html[lang="it"] * {
+  word-break: normal !important;
+  overflow-wrap: break-word !important;
+}
+html[lang="it"] .t-popup__content {
+  hyphens: auto;
+}
+
+/* Etichette del menu laterale centrate */
+html[lang="it"] a[href^="/studio/creation/"],
+html[lang="it"] a[href^="/studio/creation/"] * {
+  text-align: center !important;
+  hyphens: manual !important;
+}

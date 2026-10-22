@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "Hunyuan 3D in italiano",
+  "version": "1.3.0",
+  "description": "Traduce l'interfaccia di 3d.hunyuan.tencent.com in italiano (dizionario + traduttore integrato di Chrome come fallback).",
+  "content_scripts": [
+    {
+      "matches": ["https://3d.hunyuan.tencent.com/*"],
+      "js": ["dict.js", "content.js"],
+      "css": ["style.css"],
+      "run_at": "document_idle",
+      "all_frames": true
+    }
+  ]
+}
