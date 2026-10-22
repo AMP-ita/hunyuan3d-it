@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Hunyuan 3D Translator (EN/IT)
 // @namespace    https://github.com/amp-ita/hunyuan3d-it
-// @version      1.3.3
+// @version      1.3.4
 // @description  Translates the 3d.hunyuan.tencent.com interface into English or Italian (built-in dictionary, Chrome's on-device translator as fallback). Alt+Shift+L switches language.
 // @author       Marco
 // @match        https://3d.hunyuan.tencent.com/*
@@ -49,6 +49,15 @@
 :is(html[lang="it"], html[lang="en"]) a[href^="/studio/creation/"] * {
   text-align: center !important;
   hyphens: manual !important;
+}
+
+/* Schede del selettore (es. "Text to texture"): vanno a capo invece di sovrapporsi */
+:is(html[lang="it"], html[lang="en"]) .tab-selector .t-radio-button,
+:is(html[lang="it"], html[lang="en"]) .tab-selector .t-radio-button__label {
+  white-space: normal !important;
+  text-align: center;
+  line-height: 1.2;
+  justify-content: center;
 }
 
 /* Etichette delle schede nella finestra multi-vista centrate */

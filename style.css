@@ -32,6 +32,15 @@
   hyphens: manual !important;
 }
 
+/* Schede del selettore (es. "Text to texture"): vanno a capo invece di sovrapporsi */
+:is(html[lang="it"], html[lang="en"]) .tab-selector .t-radio-button,
+:is(html[lang="it"], html[lang="en"]) .tab-selector .t-radio-button__label {
+  white-space: normal !important;
+  text-align: center;
+  line-height: 1.2;
+  justify-content: center;
+}
+
 /* Etichette delle schede nella finestra multi-vista centrate */
 :is(html[lang="it"], html[lang="en"]) [class*="gradient-dashed-box"] span[class*="text-[12px]"] {
   text-align: center;
