@@ -198,12 +198,12 @@ window.HY_DICT = {
   "添加多视图（Min2，Max8）": "Aggiungi viste (min 2, max 8)",
   "添加多视图": "Aggiungi viste",
   "3D角色模型预览": "Anteprima del personaggio 3D",
-  "上传正图": "Carica vista frontale",
-  "上传背图": "Carica vista posteriore",
-  "上传左图": "Carica vista sinistra",
-  "上传右图": "Carica vista destra",
-  "上传顶图": "Carica vista dall'alto",
-  "上传底图": "Carica vista dal basso",
-  "上传左45°图": "Carica vista sinistra 45°",
-  "上传右45°图": "Carica vista destra 45°"
+  "上传正图": "Vista frontale",
+  "上传背图": "Vista posteriore",
+  "上传左图": "Vista sinistra",
+  "上传右图": "Vista destra",
+  "上传顶图": "Vista dall'alto",
+  "上传底图": "Vista dal basso",
+  "上传左45°图": "Sinistra 45°",
+  "上传右45°图": "Destra 45°"
 };

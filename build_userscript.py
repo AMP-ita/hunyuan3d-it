@@ -43,9 +43,10 @@ style_js = f"""
 
 out = "\n".join([
     header,
-    "/* File generato da build_userscript.py: modifica dict.js / content.js / style.css, non questo. */",
+    "/* File generato da build_userscript.py: modifica dict.js / dict.en.js / content.js / style.css, non questo. */",
     style_js,
     (here / "dict.js").read_text(encoding="utf-8"),
+    (here / "dict.en.js").read_text(encoding="utf-8"),
     (here / "content.js").read_text(encoding="utf-8"),
 ])
 (here / "hunyuan3d-it.user.js").write_text(out, encoding="utf-8")
