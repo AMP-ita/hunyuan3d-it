@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Hunyuan 3D Translator (EN/IT)
 // @namespace    https://github.com/amp-ita/hunyuan3d-it
-// @version      1.3.5
+// @version      1.3.7
 // @description  Translates the 3d.hunyuan.tencent.com interface into English or Italian (built-in dictionary, Chrome's on-device translator as fallback). Alt+Shift+L switches language.
 // @author       Ares9323
 // @match        https://3d.hunyuan.tencent.com/*
@@ -298,7 +298,86 @@ window.HY_DICT = {
   "图/文生3D": "Testo/immagine in 3D",
   "颈挂式耳机，漫步者，白色": "Cuffie con archetto da collo, Edifier, bianche",
   "使用帮助": "Guida all'uso",
-  "意见反馈": "Feedback"
+  "意见反馈": "Feedback",
+
+  // --- Texture: placeholder ed esempi ---
+  "请描述纹理材质细节，如一个拥有金色长发、头戴红色蝴蝶结，身穿蓝金配色的连衣裙与银色护甲，搭配棕色腰带与长靴的动漫女性手办":
+    "Descrivi i dettagli di texture e materiale. Esempio: una figure anime femminile con lunghi capelli biondi, fiocco rosso, abito blu e oro con armatura argentata, cintura marrone e stivali lunghi",
+  "试试一下结构描述：": "Prova una descrizione strutturata:",
+  "单主体": "Soggetto singolo",
+  "动漫女性手办": "figure anime femminile",
+  "纹理材质细节": "Dettagli di texture e materiale",
+  "金色长发、头戴红色蝴蝶结，身穿蓝金配色的连衣裙与银色护甲，搭配棕色腰带与长靴":
+    "lunghi capelli biondi, fiocco rosso, abito blu e oro con armatura argentata, cintura marrone e stivali lunghi",
+  "效果示例：": "Esempio di risultato:",
+  "材质球": "Materiale",
+  "请先选择或上传模型": "Seleziona o carica prima un modello",
+  "描述平面材质的文本，不包括几何或光照，描述图案设计，材质颜色，材质种类（如金属）。如：充满活力的柑橘元素启发的织物设计：以白色为基底，点缀着欢快的橙色水果图案，再搭配上质朴的绿色和灰色树叶，营造出清新、夏日般的视觉效果。":
+    "Descrivi il materiale piatto senza geometria né illuminazione: disegno del motivo, colore e tipo di materiale (ad esempio metallo). Esempio: un tessuto ispirato agli agrumi, con base bianca, vivaci frutti arancioni e foglie verdi e grigie dal carattere rustico, per un effetto fresco e estivo.",
+  "请描述材质特征": "Descrivi le caratteristiche del materiale",
+  "模型UV岛数量不可大于150": "Il modello non può avere più di 150 isole UV",
+
+  // --- Home: benvenuto, funzioni, galleria, note di versione ---
+  "欢迎来到": "Benvenuto in",
+  "登录后开启3D创作之旅": "Accedi per iniziare il tuo viaggio nella creazione 3D",
+  "腾讯混元": "Tencent Hunyuan",
+  "一键实现3D创意，开启专业设计新纪元": "Realizza le tue idee 3D con un clic e apri una nuova era del design professionale",
+  "端到端几何+纹理生成，": "Generazione end-to-end di geometria e texture: ",
+  "几何表面更整洁，纹理贴图更细腻": "superfici più pulite e texture più raffinate",
+  "立即开始": "Inizia ora",
+  "开始": "Inizia",
+  "3D世界模型": "Modello di mondo 3D",
+  "用文字或图片创建你的3D世界": "Crea il tuo mondo 3D da testo o immagini",
+  "高模生成": "Generazione high-poly",
+  "生成高精度模型": "Genera modelli ad alta precisione",
+  "智能化分割模型组件": "Separazione intelligente dei componenti del modello",
+  "美术级低模智能生成，兼容图片或高模输入": "Low-poly di qualità artistica generato in automatico; accetta immagini o high-poly in ingresso",
+  "语义UV": "UV semantiche",
+  "一键实现语义UV展开": "Unwrap UV semantico con un clic",
+  "高质量PBR纹理生成": "Generazione di texture PBR di alta qualità",
+  "基于指令或视频输入自动生成3D动画序列": "Genera automaticamente sequenze di animazione 3D da istruzioni o video",
+  "灵感广场": "Galleria di ispirazioni",
+  "全部节点": "Tutti i nodi",
+  "全部": "Tutti",
+  "角色": "Personaggi",
+  "道具": "Oggetti di scena",
+  "武器": "Armi",
+  "生物": "Creature",
+  "植物": "Piante",
+  "载具": "Veicoli",
+  "家居": "Arredamento",
+  "建筑": "Architettura",
+  "暂无相关案例": "Nessun esempio disponibile",
+  "组件分割": "Segmentazione componenti",
+  "一辆摩托车": "Una moto",
+  "版本说明": "Note di versione",
+  "v3.1版本": "Versione v3.1",
+  "几何更精细，纹理颜色更还原，支持更多参考视图可控生成": "Geometria più dettagliata, colori delle texture più fedeli e generazione controllata con più viste di riferimento",
+  "v3.0版本": "Versione v3.0",
+  "36亿建模体素，复杂物体高精建模，大幅提升人物生成效果": "3,6 miliardi di voxel di modellazione: alta precisione sugli oggetti complessi e personaggi molto più riusciti",
+
+  // --- Suggerimenti immagine e stato di generazione ---
+  "背景简单（尽量纯色）": "Sfondo semplice (meglio a tinta unita)",
+  "不包含文字": "Senza testo",
+  "主体不要过小": "Il soggetto non deve essere troppo piccolo",
+  "几何": "Geometria",
+  "生成中，预计还需": "Generazione in corso, tempo stimato: ",
+  "%d 秒": "%d secondi",
+  "模型生成中": "Generazione del modello in corso",
+
+  // --- Viewer 3D: feedback, vista e luci ---
+  "点赞": "Mi piace",
+  "点踩": "Non mi piace",
+  "自动旋转": "Rotazione automatica",
+  "线框+白模": "Wireframe + modello senza texture",
+  "反照率": "Albedo",
+  "场景设置": "Impostazioni scena",
+  "角度": "Angolo",
+  "射灯色值": "Colore del faretto",
+  "射灯强度": "Intensità del faretto",
+  "弱": "Bassa",
+  "强": "Alta",
+  "平面光强度": "Intensità della luce piana"
 };
 
 // Dictionary Chinese -> English. Keys must match dict.js; add entries to both.
@@ -531,7 +610,86 @@ window.HY_DICT_EN = {
   "图/文生3D": "Text/image to 3D",
   "颈挂式耳机，漫步者，白色": "Neckband headphones, Edifier, white",
   "使用帮助": "Help",
-  "意见反馈": "Feedback"
+  "意见反馈": "Feedback",
+
+  // --- Texture: placeholder and examples ---
+  "请描述纹理材质细节，如一个拥有金色长发、头戴红色蝴蝶结，身穿蓝金配色的连衣裙与银色护甲，搭配棕色腰带与长靴的动漫女性手办":
+    "Describe the texture and material details. Example: an anime female figure with long blonde hair, a red bow, a blue and gold dress with silver armor, a brown belt and long boots",
+  "试试一下结构描述：": "Try a structured description:",
+  "单主体": "Single subject",
+  "动漫女性手办": "anime female figure",
+  "纹理材质细节": "Texture and material details",
+  "金色长发、头戴红色蝴蝶结，身穿蓝金配色的连衣裙与银色护甲，搭配棕色腰带与长靴":
+    "long blonde hair, a red bow, a blue and gold dress with silver armor, a brown belt and long boots",
+  "效果示例：": "Example result:",
+  "材质球": "Material",
+  "请先选择或上传模型": "Select or upload a model first",
+  "描述平面材质的文本，不包括几何或光照，描述图案设计，材质颜色，材质种类（如金属）。如：充满活力的柑橘元素启发的织物设计：以白色为基底，点缀着欢快的橙色水果图案，再搭配上质朴的绿色和灰色树叶，营造出清新、夏日般的视觉效果。":
+    "Describe a flat material without geometry or lighting: pattern design, material color and material type (e.g. metal). Example: a fabric design inspired by citrus, with a white base, cheerful orange fruit motifs and rustic green and gray leaves, for a fresh, summery look.",
+  "请描述材质特征": "Describe the material features",
+  "模型UV岛数量不可大于150": "The model cannot have more than 150 UV islands",
+
+  // --- Home: welcome, features, gallery, release notes ---
+  "欢迎来到": "Welcome to",
+  "登录后开启3D创作之旅": "Log in to start your 3D creation journey",
+  "腾讯混元": "Tencent Hunyuan",
+  "一键实现3D创意，开启专业设计新纪元": "Turn your 3D ideas into reality with one click and enter a new era of professional design",
+  "端到端几何+纹理生成，": "End-to-end geometry and texture generation: ",
+  "几何表面更整洁，纹理贴图更细腻": "cleaner surfaces and finer texture maps",
+  "立即开始": "Get started",
+  "开始": "Start",
+  "3D世界模型": "3D world model",
+  "用文字或图片创建你的3D世界": "Create your 3D world from text or images",
+  "高模生成": "High-poly generation",
+  "生成高精度模型": "Generate high-precision models",
+  "智能化分割模型组件": "Intelligently split model components",
+  "美术级低模智能生成，兼容图片或高模输入": "Art-grade low-poly generated automatically; accepts image or high-poly input",
+  "语义UV": "Semantic UV",
+  "一键实现语义UV展开": "One-click semantic UV unwrapping",
+  "高质量PBR纹理生成": "High-quality PBR texture generation",
+  "基于指令或视频输入自动生成3D动画序列": "Automatically generate 3D animation sequences from instructions or video",
+  "灵感广场": "Inspiration gallery",
+  "全部节点": "All nodes",
+  "全部": "All",
+  "角色": "Characters",
+  "道具": "Props",
+  "武器": "Weapons",
+  "生物": "Creatures",
+  "植物": "Plants",
+  "载具": "Vehicles",
+  "家居": "Furniture",
+  "建筑": "Architecture",
+  "暂无相关案例": "No examples yet",
+  "组件分割": "Component segmentation",
+  "一辆摩托车": "A motorcycle",
+  "版本说明": "Release notes",
+  "v3.1版本": "Version v3.1",
+  "几何更精细，纹理颜色更还原，支持更多参考视图可控生成": "Finer geometry, more faithful texture colors, and controllable generation with more reference views",
+  "v3.0版本": "Version v3.0",
+  "36亿建模体素，复杂物体高精建模，大幅提升人物生成效果": "3.6 billion modeling voxels: high-precision modeling of complex objects and much better character results",
+
+  // --- Image tips and generation status ---
+  "背景简单（尽量纯色）": "Simple background (preferably solid color)",
+  "不包含文字": "No text",
+  "主体不要过小": "The subject should not be too small",
+  "几何": "Geometry",
+  "生成中，预计还需": "Generating, estimated time left: ",
+  "%d 秒": "%d seconds",
+  "模型生成中": "Generating model",
+
+  // --- 3D viewer: feedback, view and lights ---
+  "点赞": "Like",
+  "点踩": "Dislike",
+  "自动旋转": "Auto-rotate",
+  "线框+白模": "Wireframe + untextured model",
+  "反照率": "Albedo",
+  "场景设置": "Scene settings",
+  "角度": "Angle",
+  "射灯色值": "Spotlight color",
+  "射灯强度": "Spotlight intensity",
+  "弱": "Low",
+  "强": "High",
+  "平面光强度": "Flat light intensity"
 };
 
 (() => {
@@ -600,6 +758,8 @@ window.HY_DICT_EN = {
     const t = text.trim();
     if (!t || !HAS_HAN.test(t)) return null;
     if (DICT[t] != null) return text.replace(t, DICT[t]);
+    const secs = t.match(/^(\d+)\s*秒$/);   // countdown di generazione: il numero cambia a ogni tick
+    if (secs && DICT["%d 秒"]) return text.replace(t, DICT["%d 秒"].replace("%d", secs[1]));
     let out = t;
     for (const k of PARTIAL) if (out.includes(k)) out = out.split(k).join(DICT[k]);
     if (!HAS_HAN.test(out)) return text.replace(t, out);
