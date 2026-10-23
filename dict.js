@@ -293,6 +293,12 @@ window.HY_DICT = {
   "几何": "Geometria",
   "生成中，预计还需": "Generazione in corso, tempo stimato: ",
   "%d 秒": "%d secondi",
+  "当前排队中，前方%d个任务": "In coda, attività davanti a te: %d",
+  "将在大概%d 秒后开始": "Partenza tra circa %d secondi",
+  "粉色蝴蝶结": "Fiocco rosa",
+  "请至少上传两张标准视角图片，其中正视图为必须": "Carica almeno due immagini da viste standard; la vista frontale è obbligatoria",
+  "请至少上传两张标准视角图片": "Carica almeno due immagini da viste standard",
+  "重新上传": "Carica di nuovo",
   "模型生成中": "Generazione del modello in corso",
 
   // --- Viewer 3D: feedback, vista e luci ---

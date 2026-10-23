@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Hunyuan 3D Translator (EN/IT)
 // @namespace    https://github.com/amp-ita/hunyuan3d-it
-// @version      1.3.7
+// @version      1.3.8
 // @description  Translates the 3d.hunyuan.tencent.com interface into English or Italian (built-in dictionary, Chrome's on-device translator as fallback). Alt+Shift+L switches language.
 // @author       Ares9323
 // @match        https://3d.hunyuan.tencent.com/*
@@ -363,6 +363,12 @@ window.HY_DICT = {
   "几何": "Geometria",
   "生成中，预计还需": "Generazione in corso, tempo stimato: ",
   "%d 秒": "%d secondi",
+  "当前排队中，前方%d个任务": "In coda, attività davanti a te: %d",
+  "将在大概%d 秒后开始": "Partenza tra circa %d secondi",
+  "粉色蝴蝶结": "Fiocco rosa",
+  "请至少上传两张标准视角图片，其中正视图为必须": "Carica almeno due immagini da viste standard; la vista frontale è obbligatoria",
+  "请至少上传两张标准视角图片": "Carica almeno due immagini da viste standard",
+  "重新上传": "Carica di nuovo",
   "模型生成中": "Generazione del modello in corso",
 
   // --- Viewer 3D: feedback, vista e luci ---
@@ -675,6 +681,12 @@ window.HY_DICT_EN = {
   "几何": "Geometry",
   "生成中，预计还需": "Generating, estimated time left: ",
   "%d 秒": "%d seconds",
+  "当前排队中，前方%d个任务": "In queue, tasks ahead of you: %d",
+  "将在大概%d 秒后开始": "Starting in about %d seconds",
+  "粉色蝴蝶结": "Pink bow",
+  "请至少上传两张标准视角图片，其中正视图为必须": "Upload at least two standard-view images; the front view is required",
+  "请至少上传两张标准视角图片": "Upload at least two standard-view images",
+  "重新上传": "Upload again",
   "模型生成中": "Generating model",
 
   // --- 3D viewer: feedback, view and lights ---
@@ -711,11 +723,17 @@ window.HY_DICT_EN = {
   } catch {}
   if (lang === "zh") prevLang = "en";
 
-  let DICT, PARTIAL;
+  let DICT, PARTIAL, NUMERIC;
   function useDict() {
     DICT = DICTS[lang] || {};
+    // Chiavi con "%d": il numero cambia (countdown, coda), quindi si confrontano come pattern
+    const keys = Object.keys(DICT);
+    NUMERIC = keys.filter(k => k.includes("%d")).map(k => ({
+      re: new RegExp("^" + k.split("%d").map(s => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("(\\d+)") + "$"),
+      tpl: DICT[k],
+    }));
     // Chiavi per sostituzione parziale: più lunghe prima, niente chiavi di 1 carattere
-    PARTIAL = Object.keys(DICT).filter(k => [...k].length > 1).sort((a, b) => b.length - a.length);
+    PARTIAL = keys.filter(k => [...k].length > 1 && !k.includes("%d")).sort((a, b) => b.length - a.length);
   }
   useDict();
 
@@ -758,8 +776,10 @@ window.HY_DICT_EN = {
     const t = text.trim();
     if (!t || !HAS_HAN.test(t)) return null;
     if (DICT[t] != null) return text.replace(t, DICT[t]);
-    const secs = t.match(/^(\d+)\s*秒$/);   // countdown di generazione: il numero cambia a ogni tick
-    if (secs && DICT["%d 秒"]) return text.replace(t, DICT["%d 秒"].replace("%d", secs[1]));
+    for (const { re, tpl } of NUMERIC) {
+      const m = t.match(re);
+      if (m) { let i = 0; return text.replace(t, tpl.replace(/%d/g, () => m[++i])); }
+    }
     let out = t;
     for (const k of PARTIAL) if (out.includes(k)) out = out.split(k).join(DICT[k]);
     if (!HAS_HAN.test(out)) return text.replace(t, out);

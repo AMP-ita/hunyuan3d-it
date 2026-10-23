@@ -293,6 +293,12 @@ window.HY_DICT_EN = {
   "几何": "Geometry",
   "生成中，预计还需": "Generating, estimated time left: ",
   "%d 秒": "%d seconds",
+  "当前排队中，前方%d个任务": "In queue, tasks ahead of you: %d",
+  "将在大概%d 秒后开始": "Starting in about %d seconds",
+  "粉色蝴蝶结": "Pink bow",
+  "请至少上传两张标准视角图片，其中正视图为必须": "Upload at least two standard-view images; the front view is required",
+  "请至少上传两张标准视角图片": "Upload at least two standard-view images",
+  "重新上传": "Upload again",
   "模型生成中": "Generating model",
 
   // --- 3D viewer: feedback, view and lights ---

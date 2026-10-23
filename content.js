@@ -17,11 +17,17 @@
   } catch {}
   if (lang === "zh") prevLang = "en";
 
-  let DICT, PARTIAL;
+  let DICT, PARTIAL, NUMERIC;
   function useDict() {
     DICT = DICTS[lang] || {};
+    // Chiavi con "%d": il numero cambia (countdown, coda), quindi si confrontano come pattern
+    const keys = Object.keys(DICT);
+    NUMERIC = keys.filter(k => k.includes("%d")).map(k => ({
+      re: new RegExp("^" + k.split("%d").map(s => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("(\\d+)") + "$"),
+      tpl: DICT[k],
+    }));
     // Chiavi per sostituzione parziale: più lunghe prima, niente chiavi di 1 carattere
-    PARTIAL = Object.keys(DICT).filter(k => [...k].length > 1).sort((a, b) => b.length - a.length);
+    PARTIAL = keys.filter(k => [...k].length > 1 && !k.includes("%d")).sort((a, b) => b.length - a.length);
   }
   useDict();
 
@@ -64,8 +70,10 @@
     const t = text.trim();
     if (!t || !HAS_HAN.test(t)) return null;
     if (DICT[t] != null) return text.replace(t, DICT[t]);
-    const secs = t.match(/^(\d+)\s*秒$/);   // countdown di generazione: il numero cambia a ogni tick
-    if (secs && DICT["%d 秒"]) return text.replace(t, DICT["%d 秒"].replace("%d", secs[1]));
+    for (const { re, tpl } of NUMERIC) {
+      const m = t.match(re);
+      if (m) { let i = 0; return text.replace(t, tpl.replace(/%d/g, () => m[++i])); }
+    }
     let out = t;
     for (const k of PARTIAL) if (out.includes(k)) out = out.split(k).join(DICT[k]);
     if (!HAS_HAN.test(out)) return text.replace(t, out);
