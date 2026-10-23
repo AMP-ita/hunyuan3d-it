@@ -21,7 +21,7 @@ header = f"""// ==UserScript==
 // @namespace    https://github.com/{GITHUB_USER}/{REPO}
 // @version      {manifest['version']}
 // @description  {manifest['description']}
-// @author       Marco
+// @author       Ares9323
 // @match        https://3d.hunyuan.tencent.com/*
 // @run-at       document-idle
 // @grant        none

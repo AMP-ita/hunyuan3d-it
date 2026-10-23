@@ -205,5 +205,28 @@ window.HY_DICT_EN = {
   "上传顶图": "Top view",
   "上传底图": "Bottom view",
   "上传左45°图": "Left 45°",
-  "上传右45°图": "Right 45°"
+  "上传右45°图": "Right 45°",
+
+  // --- Home, footer and 3D creation ---
+  "腾讯混元3D": "Tencent Hunyuan 3D",
+  "所有内容均由AI生成仅供参考 请阅读并知悉": "All content is AI-generated and for reference only. Please read and acknowledge",
+  "《腾讯混元3D服务协议》": "《Tencent Hunyuan 3D Terms of Service》",
+  "《腾讯混元3D隐私协议》": "《Tencent Hunyuan 3D Privacy Policy》",
+  "3D创作": "3D creation",
+  "3D场景 · 全景图": "3D scene · Panorama",
+  "生成完成，点击可查看结果": "Generation complete, click to view the result",
+  "3D场景 · 世界生成": "3D scene · World generation",
+  "3D场景 · 世界重建": "3D scene · World reconstruction",
+  "文生3D": "Text to 3D",
+  "图生3D": "Image to 3D",
+  "请输入想要生成的内容。建议以单主体为主。例如：一只棕色的猫雕塑，尾巴卷曲，卡通风格":
+    "Describe what you want to generate. A single main subject works best. Example: a brown cat sculpture with a curled tail, cartoon style",
+  "单张图片": "Single image",
+  "多张图片": "Multiple images",
+  "支持png/jpg/jpeg/webp格式，图片大小最大不超过10M、分辨率最低要求128x128":
+    "Supported formats: png/jpg/jpeg/webp. Max size 10 MB, minimum resolution 128x128",
+  "图/文生3D": "Text/image to 3D",
+  "颈挂式耳机，漫步者，白色": "Neckband headphones, Edifier, white",
+  "使用帮助": "Help",
+  "意见反馈": "Feedback"
 };

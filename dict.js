@@ -205,5 +205,28 @@ window.HY_DICT = {
   "上传顶图": "Vista dall'alto",
   "上传底图": "Vista dal basso",
   "上传左45°图": "Sinistra 45°",
-  "上传右45°图": "Destra 45°"
+  "上传右45°图": "Destra 45°",
+
+  // --- Home, footer e creazione 3D ---
+  "腾讯混元3D": "Tencent Hunyuan 3D",
+  "所有内容均由AI生成仅供参考 请阅读并知悉": "Tutti i contenuti sono generati dall'IA e hanno valore puramente indicativo. Leggi e prendi atto",
+  "《腾讯混元3D服务协议》": "《Condizioni di servizio di Tencent Hunyuan 3D》",
+  "《腾讯混元3D隐私协议》": "《Informativa sulla privacy di Tencent Hunyuan 3D》",
+  "3D创作": "Creazione 3D",
+  "3D场景 · 全景图": "Scena 3D · Panorama",
+  "生成完成，点击可查看结果": "Generazione completata, clicca per vedere il risultato",
+  "3D场景 · 世界生成": "Scena 3D · Generazione del mondo",
+  "3D场景 · 世界重建": "Scena 3D · Ricostruzione del mondo",
+  "文生3D": "Testo in 3D",
+  "图生3D": "Immagine in 3D",
+  "请输入想要生成的内容。建议以单主体为主。例如：一只棕色的猫雕塑，尾巴卷曲，卡通风格":
+    "Descrivi cosa vuoi generare. Meglio con un solo soggetto. Esempio: scultura di un gatto marrone con la coda arricciata, stile cartoon",
+  "单张图片": "Immagine singola",
+  "多张图片": "Più immagini",
+  "支持png/jpg/jpeg/webp格式，图片大小最大不超过10M、分辨率最低要求128x128":
+    "Formati supportati: png/jpg/jpeg/webp. Dimensione massima 10 MB, risoluzione minima 128x128",
+  "图/文生3D": "Testo/immagine in 3D",
+  "颈挂式耳机，漫步者，白色": "Cuffie con archetto da collo, Edifier, bianche",
+  "使用帮助": "Guida all'uso",
+  "意见反馈": "Feedback"
 };
