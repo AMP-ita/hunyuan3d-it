@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Hunyuan 3D Translator (EN/IT)
 // @namespace    https://github.com/amp-ita/hunyuan3d-it
-// @version      1.3.9
+// @version      1.3.10
 // @description  Translates the 3d.hunyuan.tencent.com interface into English or Italian (built-in dictionary, Chrome's on-device translator as fallback). Alt+Shift+L switches language.
 // @author       Ares9323
 // @match        https://3d.hunyuan.tencent.com/*
@@ -394,7 +394,27 @@ window.HY_DICT = {
   "单主体人物、正面、全身": "Personaggio singolo, di fronte, a figura intera",
   "释放鼠标": "Rilascia il mouse",
   "模型分割": "Segmentazione modello",
-  "预分割": "Pre-segmentazione"
+  "预分割": "Pre-segmentazione",
+  "模型面数不可大于3万": "Il modello non può avere più di 30.000 facce",
+  "支持FBX, GLB, OBJ格式": "Formati supportati: FBX, GLB, OBJ",
+  "支持.FBX, .GLB, .OBJ格式": "Formati supportati: .FBX, .GLB, .OBJ",
+
+  // --- Topologia, A-pose e creazione da prompt ---
+  "模型已拓扑": "Modello già retopologizzato",
+  "低面数：": "Poche facce:",
+  "中面数：": "Facce medie:",
+  "高面数：": "Molte facce:",
+  "v1.5版本-首个原生四边面拓扑模型，布线规整度进一步提升": "Versione v1.5: primo modello con topologia nativa a quad, con una pulizia dei bordi ancora migliore",
+  "支持FBX, GLB, OBJ格式，面数小于10万": "Formati supportati: FBX, GLB, OBJ. Meno di 100.000 facce",
+  "标准化A-pose（只针对角色）": "A-pose standard (solo per personaggi)",
+  "对输入的prompt生成的全身人像转换为标准A-pose姿态（建议输入真人正面站立图像，四肢未遮挡，无附加物品（如手提包、武器装备、篮球、足球），头发不过肩，衣服合身，无宽松长袖、长裙、古装等）": "Converte in A-pose standard la figura intera generata dal prompt (consigliata una foto frontale di una persona in piedi, con gli arti liberi e senza oggetti aggiuntivi come borse, armi, palloni da basket o da calcio, capelli non oltre le spalle, vestiti aderenti, senza maniche lunghe larghe, gonne lunghe o abiti d'epoca)",
+  "请输入提示词": "Inserisci il prompt",
+  "骑士": "Cavaliere",
+  "特征（可选）": "Caratteristiche (facoltativo)",
+  "穿戴中世纪铠甲": "Indossa un'armatura medievale",
+  "风格（可选）": "Stile (facoltativo)",
+  "卡通": "Cartoon",
+  "仅限人物角色，支持png/jpg/jpeg/webp格式，文件大小最大不超过10M，分辨率最低要求128*128，最高限制4096*4096": "Solo personaggi. Formati supportati: png/jpg/jpeg/webp. Dimensione massima 10 MB, risoluzione da 128*128 a 4096*4096"
 };
 
 // Dictionary Chinese -> English. Keys must match dict.js; add entries to both.
@@ -723,7 +743,27 @@ window.HY_DICT_EN = {
   "单主体人物、正面、全身": "Single character, front view, full body",
   "释放鼠标": "Release the mouse",
   "模型分割": "Model segmentation",
-  "预分割": "Pre-segmentation"
+  "预分割": "Pre-segmentation",
+  "模型面数不可大于3万": "The model cannot have more than 30,000 faces",
+  "支持FBX, GLB, OBJ格式": "Supported formats: FBX, GLB, OBJ",
+  "支持.FBX, .GLB, .OBJ格式": "Supported formats: .FBX, .GLB, .OBJ",
+
+  // --- Topology, A-pose and prompt-based creation ---
+  "模型已拓扑": "Model already retopologized",
+  "低面数：": "Low face count: ",
+  "中面数：": "Medium face count: ",
+  "高面数：": "High face count: ",
+  "v1.5版本-首个原生四边面拓扑模型，布线规整度进一步提升": "Version v1.5: first model with native quad topology and even cleaner edge flow",
+  "支持FBX, GLB, OBJ格式，面数小于10万": "Supported formats: FBX, GLB, OBJ. Fewer than 100,000 faces",
+  "标准化A-pose（只针对角色）": "Standard A-pose (characters only)",
+  "对输入的prompt生成的全身人像转换为标准A-pose姿态（建议输入真人正面站立图像，四肢未遮挡，无附加物品（如手提包、武器装备、篮球、足球），头发不过肩，衣服合身，无宽松长袖、长裙、古装等）": "Converts the full-body figure generated from the prompt to a standard A-pose (a front-facing standing photo of a real person works best: limbs unobstructed, no extra items such as handbags, weapons, basketballs or footballs, hair not past the shoulders, close-fitting clothes, no loose long sleeves, long skirts or period costumes)",
+  "请输入提示词": "Enter a prompt",
+  "骑士": "Knight",
+  "特征（可选）": "Features (optional)",
+  "穿戴中世纪铠甲": "Wearing medieval armor",
+  "风格（可选）": "Style (optional)",
+  "卡通": "Cartoon",
+  "仅限人物角色，支持png/jpg/jpeg/webp格式，文件大小最大不超过10M，分辨率最低要求128*128，最高限制4096*4096": "Characters only. Supported formats: png/jpg/jpeg/webp. Maximum size 10 MB, resolution from 128*128 to 4096*4096"
 };
 
 (() => {

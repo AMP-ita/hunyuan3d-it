@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Hunyuan 3D Translator (EN/IT)",
-  "version": "1.3.9",
+  "version": "1.3.10",
   "description": "Translates the 3d.hunyuan.tencent.com interface into English or Italian (built-in dictionary, Chrome's on-device translator as fallback). Alt+Shift+L switches language.",
   "content_scripts": [
     {
