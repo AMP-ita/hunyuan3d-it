@@ -313,5 +313,16 @@ window.HY_DICT = {
   "射灯强度": "Intensità del faretto",
   "弱": "Bassa",
   "强": "Alta",
-  "平面光强度": "Intensità della luce piana"
+  "平面光强度": "Intensità della luce piana",
+
+  // --- Asset, riferimenti, note di versione v3.6 e segmentazione ---
+  "资产删除后将无法恢复，确认删除吗？": "Una volta eliminato, l'asset non potrà essere recuperato. Confermi l'eliminazione?",
+  "参考图": "Immagine di riferimento",
+  "v3.6版本：": "Versione v3.6:",
+  "几何表面更整洁，结构更清晰，材质贴图更高质": "Superfici geometriche più pulite, struttura più chiara e texture di qualità superiore",
+  "几何表面更整洁，结构更清晰，材质贴图更高质量": "Superfici geometriche più pulite, struttura più chiara e texture di qualità superiore",
+  "单主体人物、正面、全身": "Personaggio singolo, di fronte, a figura intera",
+  "释放鼠标": "Rilascia il mouse",
+  "模型分割": "Segmentazione modello",
+  "预分割": "Pre-segmentazione"
 };

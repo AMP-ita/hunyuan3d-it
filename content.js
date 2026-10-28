@@ -141,6 +141,21 @@
     }
   }
 
+  // Titolo della scheda: <title> sta nell'head, fuori da document.body
+  let titleOrig = null, titleWritten = null;
+  function handleTitle() {
+    const cur = document.title;
+    if (cur === titleWritten || !HAS_HAN.test(cur)) return;
+    titleOrig = cur;
+    if (lang === "zh") return;
+    const apply = s => { titleWritten = s; document.title = s; };
+    const tr = translateSync(cur);
+    if (tr != null) { apply(tr); return; }
+    const l = lang;
+    missing.add(cur.trim());
+    translateMT(cur.trim(), l).then(r => { if (r && document.title === cur && lang === l) apply(r); });
+  }
+
   function walk(root) {
     if (root.nodeType === 3) return handleText(root);
     if (root.nodeType !== 1 && root.nodeType !== 11) return;
@@ -167,9 +182,12 @@
     mo.observe(root, { childList: true, subtree: true, characterData: true, attributes: true, attributeFilter: ATTRS });
   }
 
+  new MutationObserver(handleTitle).observe(document.head || document.documentElement, { childList: true, subtree: true, characterData: true });
+
   // Ripristina il cinese originale e dimentica le nostre scritture, così un
   // successivo walk() riparte da zero (anche con un'altra lingua).
   function restoreAll() {
+    if (titleOrig != null) { titleWritten = null; document.title = titleOrig; }
     const w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT | NodeFilter.SHOW_ELEMENT);
     let n;
     while ((n = w.nextNode())) {
@@ -193,7 +211,7 @@
     useDict();
     missing.clear();
     restoreAll();
-    if (lang !== "zh") walk(document.body);
+    if (lang !== "zh") { walk(document.body); handleTitle(); }
     document.documentElement.lang = lang;
     toast("Language: " + LANG_NAMES[lang]);
   }
@@ -228,6 +246,7 @@
   }
 
   if (lang !== "zh") walk(document.body);
+  handleTitle();
   observe(document.body);
   document.documentElement.lang = lang;
 })();

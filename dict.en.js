@@ -313,5 +313,16 @@ window.HY_DICT_EN = {
   "射灯强度": "Spotlight intensity",
   "弱": "Low",
   "强": "High",
-  "平面光强度": "Flat light intensity"
+  "平面光强度": "Flat light intensity",
+
+  // --- Assets, references, v3.6 release notes and segmentation ---
+  "资产删除后将无法恢复，确认删除吗？": "Once deleted, the asset cannot be recovered. Confirm deletion?",
+  "参考图": "Reference image",
+  "v3.6版本：": "Version v3.6:",
+  "几何表面更整洁，结构更清晰，材质贴图更高质": "Cleaner geometric surfaces, clearer structure, and higher-quality texture maps",
+  "几何表面更整洁，结构更清晰，材质贴图更高质量": "Cleaner geometric surfaces, clearer structure, and higher-quality texture maps",
+  "单主体人物、正面、全身": "Single character, front view, full body",
+  "释放鼠标": "Release the mouse",
+  "模型分割": "Model segmentation",
+  "预分割": "Pre-segmentation"
 };

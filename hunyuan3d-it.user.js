@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Hunyuan 3D Translator (EN/IT)
 // @namespace    https://github.com/amp-ita/hunyuan3d-it
-// @version      1.3.8
+// @version      1.3.9
 // @description  Translates the 3d.hunyuan.tencent.com interface into English or Italian (built-in dictionary, Chrome's on-device translator as fallback). Alt+Shift+L switches language.
 // @author       Ares9323
 // @match        https://3d.hunyuan.tencent.com/*
@@ -383,7 +383,18 @@ window.HY_DICT = {
   "射灯强度": "Intensità del faretto",
   "弱": "Bassa",
   "强": "Alta",
-  "平面光强度": "Intensità della luce piana"
+  "平面光强度": "Intensità della luce piana",
+
+  // --- Asset, riferimenti, note di versione v3.6 e segmentazione ---
+  "资产删除后将无法恢复，确认删除吗？": "Una volta eliminato, l'asset non potrà essere recuperato. Confermi l'eliminazione?",
+  "参考图": "Immagine di riferimento",
+  "v3.6版本：": "Versione v3.6:",
+  "几何表面更整洁，结构更清晰，材质贴图更高质": "Superfici geometriche più pulite, struttura più chiara e texture di qualità superiore",
+  "几何表面更整洁，结构更清晰，材质贴图更高质量": "Superfici geometriche più pulite, struttura più chiara e texture di qualità superiore",
+  "单主体人物、正面、全身": "Personaggio singolo, di fronte, a figura intera",
+  "释放鼠标": "Rilascia il mouse",
+  "模型分割": "Segmentazione modello",
+  "预分割": "Pre-segmentazione"
 };
 
 // Dictionary Chinese -> English. Keys must match dict.js; add entries to both.
@@ -701,7 +712,18 @@ window.HY_DICT_EN = {
   "射灯强度": "Spotlight intensity",
   "弱": "Low",
   "强": "High",
-  "平面光强度": "Flat light intensity"
+  "平面光强度": "Flat light intensity",
+
+  // --- Assets, references, v3.6 release notes and segmentation ---
+  "资产删除后将无法恢复，确认删除吗？": "Once deleted, the asset cannot be recovered. Confirm deletion?",
+  "参考图": "Reference image",
+  "v3.6版本：": "Version v3.6:",
+  "几何表面更整洁，结构更清晰，材质贴图更高质": "Cleaner geometric surfaces, clearer structure, and higher-quality texture maps",
+  "几何表面更整洁，结构更清晰，材质贴图更高质量": "Cleaner geometric surfaces, clearer structure, and higher-quality texture maps",
+  "单主体人物、正面、全身": "Single character, front view, full body",
+  "释放鼠标": "Release the mouse",
+  "模型分割": "Model segmentation",
+  "预分割": "Pre-segmentation"
 };
 
 (() => {
@@ -847,6 +869,21 @@ window.HY_DICT_EN = {
     }
   }
 
+  // Titolo della scheda: <title> sta nell'head, fuori da document.body
+  let titleOrig = null, titleWritten = null;
+  function handleTitle() {
+    const cur = document.title;
+    if (cur === titleWritten || !HAS_HAN.test(cur)) return;
+    titleOrig = cur;
+    if (lang === "zh") return;
+    const apply = s => { titleWritten = s; document.title = s; };
+    const tr = translateSync(cur);
+    if (tr != null) { apply(tr); return; }
+    const l = lang;
+    missing.add(cur.trim());
+    translateMT(cur.trim(), l).then(r => { if (r && document.title === cur && lang === l) apply(r); });
+  }
+
   function walk(root) {
     if (root.nodeType === 3) return handleText(root);
     if (root.nodeType !== 1 && root.nodeType !== 11) return;
@@ -873,9 +910,12 @@ window.HY_DICT_EN = {
     mo.observe(root, { childList: true, subtree: true, characterData: true, attributes: true, attributeFilter: ATTRS });
   }
 
+  new MutationObserver(handleTitle).observe(document.head || document.documentElement, { childList: true, subtree: true, characterData: true });
+
   // Ripristina il cinese originale e dimentica le nostre scritture, così un
   // successivo walk() riparte da zero (anche con un'altra lingua).
   function restoreAll() {
+    if (titleOrig != null) { titleWritten = null; document.title = titleOrig; }
     const w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT | NodeFilter.SHOW_ELEMENT);
     let n;
     while ((n = w.nextNode())) {
@@ -899,7 +939,7 @@ window.HY_DICT_EN = {
     useDict();
     missing.clear();
     restoreAll();
-    if (lang !== "zh") walk(document.body);
+    if (lang !== "zh") { walk(document.body); handleTitle(); }
     document.documentElement.lang = lang;
     toast("Language: " + LANG_NAMES[lang]);
   }
@@ -934,6 +974,7 @@ window.HY_DICT_EN = {
   }
 
   if (lang !== "zh") walk(document.body);
+  handleTitle();
   observe(document.body);
   document.documentElement.lang = lang;
 })();
