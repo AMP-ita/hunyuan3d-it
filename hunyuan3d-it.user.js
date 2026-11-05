@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Hunyuan 3D Translator (EN/IT)
 // @namespace    https://github.com/amp-ita/hunyuan3d-it
-// @version      1.3.10
+// @version      1.3.12
 // @description  Translates the 3d.hunyuan.tencent.com interface into English or Italian (built-in dictionary, Chrome's on-device translator as fallback). Alt+Shift+L switches language.
 // @author       Ares9323
 // @match        https://3d.hunyuan.tencent.com/*
@@ -414,7 +414,35 @@ window.HY_DICT = {
   "穿戴中世纪铠甲": "Indossa un'armatura medievale",
   "风格（可选）": "Stile (facoltativo)",
   "卡通": "Cartoon",
-  "仅限人物角色，支持png/jpg/jpeg/webp格式，文件大小最大不超过10M，分辨率最低要求128*128，最高限制4096*4096": "Solo personaggi. Formati supportati: png/jpg/jpeg/webp. Dimensione massima 10 MB, risoluzione da 128*128 a 4096*4096"
+  "仅限人物角色，支持png/jpg/jpeg/webp格式，文件大小最大不超过10M，分辨率最低要求128*128，最高限制4096*4096": "Solo personaggi. Formati supportati: png/jpg/jpeg/webp. Dimensione massima 10 MB, risoluzione da 128*128 a 4096*4096",
+  "上传图片需要包含正视图": "Le immagini caricate devono includere la vista frontale",
+  "暂无图层信息": "Nessuna informazione sui livelli",
+  "显示Mesh": "Mostra mesh",
+
+  // --- Nuove voci (grafo livelli, immagine in low-poly v3.0, viewer) ---
+  "加载失败": "Caricamento non riuscito",
+  "图生低模": "Immagine in low-poly",
+  "自适应面数": "Numero di facce adattivo",
+  "支持.png, .jpg, .jpeg, .webp格式，文件大小最大不超过10M，分辨率最低要求128*128": "Formati supportati: .png, .jpg, .jpeg, .webp. Dimensione massima 10 MB, risoluzione minima 128*128",
+  "请输入": "Inserisci un valore",
+  "请上传图片": "Carica un'immagine",
+  "图生低模 - V3.0": "Immagine in low-poly - V3.0",
+  "勾选后将自动指定最优面数": "Se selezionato, il numero di facce ottimale viene scelto automaticamente",
+  "指定面数": "Numero di facce personalizzato",
+  "可输入100至60000的整数值，实际生成面数在目标值±20%范围内自适应调整。": "Puoi inserire un numero intero da 100 a 60000. Il numero di facce generato si adatta entro ±20% del valore indicato.",
+  "v3.0版本-新一代低模模型，布线质量与细节保持进一步提升，支持精确面数控制": "Versione 3.0: modello low-poly di nuova generazione, con topologia e conservazione dei dettagli ancora migliori e controllo preciso del numero di facce",
+  "v2.5版本-提升布线质量，细节保持能力更强，稳定性提升，支持精确面数控制": "Versione 2.5: topologia migliorata, maggiore conservazione dei dettagli, più stabilità e controllo preciso del numero di facce",
+  "高质全能": "Alta qualità a tutto tondo",
+  "精度更高": "Precisione maggiore",
+  "可输入100至20000的整数值，实际生成面数在目标值±20%范围内自适应调整。": "Puoi inserire un numero intero da 100 a 20000. Il numero di facce generato si adatta entro ±20% del valore indicato.",
+  "通过文本生成3D设计图": "Genera concept 3D da testo",
+  "输入文本生成图片。建议以单主体为主。例如：一个战士英雄，手持战锤，蒸汽朋克风格": "Inserisci un testo per generare l'immagine. Meglio un solo soggetto. Esempio: un eroe guerriero con un martello da guerra, stile steampunk",
+  "已选%d": "Selezionati %d",
+  "无封面图": "Nessuna immagine di copertina",
+  "缩放": "Scala",
+  "X轴": "Asse X",
+  "Y轴": "Asse Y",
+  "Z轴": "Asse Z"
 };
 
 // Dictionary Chinese -> English. Keys must match dict.js; add entries to both.
@@ -763,7 +791,35 @@ window.HY_DICT_EN = {
   "穿戴中世纪铠甲": "Wearing medieval armor",
   "风格（可选）": "Style (optional)",
   "卡通": "Cartoon",
-  "仅限人物角色，支持png/jpg/jpeg/webp格式，文件大小最大不超过10M，分辨率最低要求128*128，最高限制4096*4096": "Characters only. Supported formats: png/jpg/jpeg/webp. Maximum size 10 MB, resolution from 128*128 to 4096*4096"
+  "仅限人物角色，支持png/jpg/jpeg/webp格式，文件大小最大不超过10M，分辨率最低要求128*128，最高限制4096*4096": "Characters only. Supported formats: png/jpg/jpeg/webp. Maximum size 10 MB, resolution from 128*128 to 4096*4096",
+  "上传图片需要包含正视图": "The uploaded images must include the front view",
+  "暂无图层信息": "No layer information",
+  "显示Mesh": "Show mesh",
+
+  // --- New entries (layers graph, image to low-poly v3.0, viewer) ---
+  "加载失败": "Failed to load",
+  "图生低模": "Image to low-poly",
+  "自适应面数": "Adaptive face count",
+  "支持.png, .jpg, .jpeg, .webp格式，文件大小最大不超过10M，分辨率最低要求128*128": "Supported formats: .png, .jpg, .jpeg, .webp. Maximum size 10 MB, minimum resolution 128*128",
+  "请输入": "Please enter a value",
+  "请上传图片": "Please upload an image",
+  "图生低模 - V3.0": "Image to low-poly - V3.0",
+  "勾选后将自动指定最优面数": "When checked, the optimal face count is chosen automatically",
+  "指定面数": "Custom face count",
+  "可输入100至60000的整数值，实际生成面数在目标值±20%范围内自适应调整。": "Enter an integer from 100 to 60000. The generated face count adapts to within ±20% of the target value.",
+  "v3.0版本-新一代低模模型，布线质量与细节保持进一步提升，支持精确面数控制": "Version 3.0: next-generation low-poly model with further improved topology and detail retention, and precise face count control",
+  "v2.5版本-提升布线质量，细节保持能力更强，稳定性提升，支持精确面数控制": "Version 2.5: improved topology, better detail retention, more stability, and precise face count control",
+  "高质全能": "High quality, all-round",
+  "精度更高": "Higher precision",
+  "可输入100至20000的整数值，实际生成面数在目标值±20%范围内自适应调整。": "Enter an integer from 100 to 20000. The generated face count adapts to within ±20% of the target value.",
+  "通过文本生成3D设计图": "Generate 3D concept art from text",
+  "输入文本生成图片。建议以单主体为主。例如：一个战士英雄，手持战锤，蒸汽朋克风格": "Enter text to generate an image. A single subject works best. Example: a warrior hero holding a war hammer, steampunk style",
+  "已选%d": "%d selected",
+  "无封面图": "No cover image",
+  "缩放": "Scale",
+  "X轴": "X axis",
+  "Y轴": "Y axis",
+  "Z轴": "Z axis"
 };
 
 (() => {
