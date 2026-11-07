@@ -443,5 +443,17 @@ window.HY_DICT_EN = {
   "请生成组件后切换": "Generate the components before switching",
   "自动识别模型的几何形状并进行预测，将其割成数个组件。支持多次点击「分割」，尝试不同的分割效果。": "Automatically analyzes the model geometry and splits it into several components. You can click “Segment” multiple times to try different results.",
   "模型初始输入": "Input model",
-  "模型预分割后": "Model after pre-segmentation"
+  "模型预分割后": "Model after pre-segmentation",
+  "圆盘笔刷": "Disc brush",
+  "球形笔刷": "Sphere brush",
+  "油漆桶": "Paint bucket",
+  "清空": "Clear",
+  "重做": "Redo",
+  "撤销": "Undo",
+  "按住Ctrl激活选点，在模型上选点": "Hold Ctrl to activate point selection and click on the model to place points",
+  "按住 Ctrl 可临时切换为 连通域 模式": "Hold Ctrl to temporarily switch to connected region mode",
+  "按住 Ctrl 可临时切换为 Part 模式": "Hold Ctrl to temporarily switch to part mode",
+  "点击隐藏": "Click to hide",
+  "点击显示": "Click to show",
+  "笔刷已激活": "Brush active"
 };

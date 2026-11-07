@@ -19,6 +19,7 @@ Updates are picked up automatically.
 - **Alt+Shift+L**: switch language (English → Italiano → original Chinese). The choice is remembered.
 - **Alt+Shift+O**: toggle between the original Chinese text and the last language you used.
 - **Alt+Shift+M**: copy to the clipboard the texts that are not in the dictionary yet.
+- **Alt+Shift+T**: show or hide tooltips with the original Chinese text on translated labels (off by default, the choice is remembered).
 - Hover over a translated text to see the original Chinese.
 - On Chrome, texts missing from the dictionary are translated by the browser's built-in translator (the model downloads on your first click on the page). On other browsers they stay in Chinese until they are added to the dictionary.
 
@@ -51,6 +52,7 @@ Gli aggiornamenti arrivano in automatico.
 - **Alt+Shift+L**: cambia lingua (English → Italiano → cinese originale). La scelta viene ricordata.
 - **Alt+Shift+O**: alterna il testo originale cinese e l'ultima lingua usata.
 - **Alt+Shift+M**: copia negli appunti i testi non ancora presenti nel dizionario.
+- **Alt+Shift+T**: mostra o nasconde i tooltip col testo cinese originale sulle etichette tradotte (spenti di default, la scelta viene ricordata).
 - Passa il mouse su un testo tradotto per vedere l'originale cinese.
 - Su Chrome i testi non presenti nel dizionario vengono tradotti dal traduttore integrato del browser (il modello si scarica al primo clic sulla pagina). Sugli altri browser restano in cinese finché non vengono aggiunti al dizionario.
 

@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Hunyuan 3D Translator (EN/IT)
 // @namespace    https://github.com/amp-ita/hunyuan3d-it
-// @version      1.3.13
+// @version      1.3.14
 // @description  Translates the 3d.hunyuan.tencent.com interface into English or Italian (built-in dictionary, Chrome's on-device translator as fallback). Alt+Shift+L switches language.
 // @author       Ares9323
 // @match        https://3d.hunyuan.tencent.com/*
@@ -513,7 +513,19 @@ window.HY_DICT = {
   "请生成组件后切换": "Genera i componenti prima di cambiare vista",
   "自动识别模型的几何形状并进行预测，将其割成数个组件。支持多次点击「分割」，尝试不同的分割效果。": "Riconosce automaticamente la geometria del modello e la divide in più componenti. Puoi fare clic su “Segmenta” più volte per provare risultati diversi.",
   "模型初始输入": "Modello iniziale",
-  "模型预分割后": "Modello dopo la pre-segmentazione"
+  "模型预分割后": "Modello dopo la pre-segmentazione",
+  "圆盘笔刷": "Pennello a disco",
+  "球形笔刷": "Pennello sferico",
+  "油漆桶": "Secchiello",
+  "清空": "Svuota",
+  "重做": "Ripeti",
+  "撤销": "Annulla",
+  "按住Ctrl激活选点，在模型上选点": "Tieni premuto Ctrl per attivare la selezione e fai clic sul modello per posizionare i punti",
+  "按住 Ctrl 可临时切换为 连通域 模式": "Tieni premuto Ctrl per passare temporaneamente alla modalità regione connessa",
+  "按住 Ctrl 可临时切换为 Part 模式": "Tieni premuto Ctrl per passare temporaneamente alla modalità parte",
+  "点击隐藏": "Fai clic per nascondere",
+  "点击显示": "Fai clic per mostrare",
+  "笔刷已激活": "Pennello attivo"
 };
 
 // Dictionary Chinese -> English. Keys must match dict.js; add entries to both.
@@ -961,7 +973,19 @@ window.HY_DICT_EN = {
   "请生成组件后切换": "Generate the components before switching",
   "自动识别模型的几何形状并进行预测，将其割成数个组件。支持多次点击「分割」，尝试不同的分割效果。": "Automatically analyzes the model geometry and splits it into several components. You can click “Segment” multiple times to try different results.",
   "模型初始输入": "Input model",
-  "模型预分割后": "Model after pre-segmentation"
+  "模型预分割后": "Model after pre-segmentation",
+  "圆盘笔刷": "Disc brush",
+  "球形笔刷": "Sphere brush",
+  "油漆桶": "Paint bucket",
+  "清空": "Clear",
+  "重做": "Redo",
+  "撤销": "Undo",
+  "按住Ctrl激活选点，在模型上选点": "Hold Ctrl to activate point selection and click on the model to place points",
+  "按住 Ctrl 可临时切换为 连通域 模式": "Hold Ctrl to temporarily switch to connected region mode",
+  "按住 Ctrl 可临时切换为 Part 模式": "Hold Ctrl to temporarily switch to part mode",
+  "点击隐藏": "Click to hide",
+  "点击显示": "Click to show",
+  "笔刷已激活": "Brush active"
 };
 
 (() => {
@@ -982,6 +1006,10 @@ window.HY_DICT_EN = {
     if (LANGS.includes(saved)) lang = saved;
   } catch {}
   if (lang === "zh") prevLang = "en";
+
+  const LS_TIPS = "hy-orig-tooltips";
+  let showOrig = false;              // tooltip col cinese originale (Alt+Shift+T)
+  try { showOrig = localStorage.getItem(LS_TIPS) === "1"; } catch {}
 
   let DICT, PARTIAL, NUMERIC;
   function useDict() {
@@ -1072,10 +1100,11 @@ window.HY_DICT_EN = {
 
     originals.set(node, cur);
     if (lang === "zh") return;
-    // Tooltip nativo con il cinese originale (utile per cercare termini)
-    if (!p.hasAttribute("title") && cur.trim().length < 80) {
+    // Tooltip nativo con il cinese originale (utile per cercare termini).
+    // Spento di default perché sembra una traduzione mancante: Alt+Shift+T lo accende.
+    if (p.__hyOwnTitle == null && !p.hasAttribute("title") && cur.trim().length < 80) {
       p.__hyOwnTitle = cur.trim();
-      p.setAttribute("title", cur.trim());
+      if (showOrig) p.setAttribute("title", p.__hyOwnTitle);
     }
 
     const tr = translateSync(cur);
@@ -1186,9 +1215,21 @@ window.HY_DICT_EN = {
   //  Alt+Shift+L  -> cambia lingua (English -> Italiano -> originale cinese)
   //  Alt+Shift+O  -> alterna testo originale cinese / ultima lingua usata
   //  Alt+Shift+M  -> copia negli appunti le stringhe non presenti nel dizionario
+  //  Alt+Shift+T  -> mostra/nasconde i tooltip col testo cinese originale
   document.addEventListener("keydown", e => {
     if (!e.altKey || !e.shiftKey) return;
-    if (e.code === "KeyL") {
+    if (e.code === "KeyT") {
+      showOrig = !showOrig;
+      try { localStorage.setItem(LS_TIPS, showOrig ? "1" : "0"); } catch {}
+      const w = document.createTreeWalker(document.body, NodeFilter.SHOW_ELEMENT);
+      let n;
+      while ((n = w.nextNode())) {
+        if (n.__hyOwnTitle == null) continue;
+        if (showOrig && lang !== "zh") { if (!n.hasAttribute("title")) n.setAttribute("title", n.__hyOwnTitle); }
+        else if (n.getAttribute("title") === n.__hyOwnTitle) n.removeAttribute("title");
+      }
+      toast(showOrig ? "Original text tooltips: on" : "Original text tooltips: off");
+    } else if (e.code === "KeyL") {
       setLang(LANGS[(LANGS.indexOf(lang) + 1) % LANGS.length]);
     } else if (e.code === "KeyO") {
       setLang(lang === "zh" ? prevLang : "zh");

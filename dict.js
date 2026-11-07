@@ -443,5 +443,17 @@ window.HY_DICT = {
   "请生成组件后切换": "Genera i componenti prima di cambiare vista",
   "自动识别模型的几何形状并进行预测，将其割成数个组件。支持多次点击「分割」，尝试不同的分割效果。": "Riconosce automaticamente la geometria del modello e la divide in più componenti. Puoi fare clic su “Segmenta” più volte per provare risultati diversi.",
   "模型初始输入": "Modello iniziale",
-  "模型预分割后": "Modello dopo la pre-segmentazione"
+  "模型预分割后": "Modello dopo la pre-segmentazione",
+  "圆盘笔刷": "Pennello a disco",
+  "球形笔刷": "Pennello sferico",
+  "油漆桶": "Secchiello",
+  "清空": "Svuota",
+  "重做": "Ripeti",
+  "撤销": "Annulla",
+  "按住Ctrl激活选点，在模型上选点": "Tieni premuto Ctrl per attivare la selezione e fai clic sul modello per posizionare i punti",
+  "按住 Ctrl 可临时切换为 连通域 模式": "Tieni premuto Ctrl per passare temporaneamente alla modalità regione connessa",
+  "按住 Ctrl 可临时切换为 Part 模式": "Tieni premuto Ctrl per passare temporaneamente alla modalità parte",
+  "点击隐藏": "Fai clic per nascondere",
+  "点击显示": "Fai clic per mostrare",
+  "笔刷已激活": "Pennello attivo"
 };

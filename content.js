@@ -17,6 +17,10 @@
   } catch {}
   if (lang === "zh") prevLang = "en";
 
+  const LS_TIPS = "hy-orig-tooltips";
+  let showOrig = false;              // tooltip col cinese originale (Alt+Shift+T)
+  try { showOrig = localStorage.getItem(LS_TIPS) === "1"; } catch {}
+
   let DICT, PARTIAL, NUMERIC;
   function useDict() {
     DICT = DICTS[lang] || {};
@@ -106,10 +110,11 @@
 
     originals.set(node, cur);
     if (lang === "zh") return;
-    // Tooltip nativo con il cinese originale (utile per cercare termini)
-    if (!p.hasAttribute("title") && cur.trim().length < 80) {
+    // Tooltip nativo con il cinese originale (utile per cercare termini).
+    // Spento di default perché sembra una traduzione mancante: Alt+Shift+T lo accende.
+    if (p.__hyOwnTitle == null && !p.hasAttribute("title") && cur.trim().length < 80) {
       p.__hyOwnTitle = cur.trim();
-      p.setAttribute("title", cur.trim());
+      if (showOrig) p.setAttribute("title", p.__hyOwnTitle);
     }
 
     const tr = translateSync(cur);
@@ -220,9 +225,21 @@
   //  Alt+Shift+L  -> cambia lingua (English -> Italiano -> originale cinese)
   //  Alt+Shift+O  -> alterna testo originale cinese / ultima lingua usata
   //  Alt+Shift+M  -> copia negli appunti le stringhe non presenti nel dizionario
+  //  Alt+Shift+T  -> mostra/nasconde i tooltip col testo cinese originale
   document.addEventListener("keydown", e => {
     if (!e.altKey || !e.shiftKey) return;
-    if (e.code === "KeyL") {
+    if (e.code === "KeyT") {
+      showOrig = !showOrig;
+      try { localStorage.setItem(LS_TIPS, showOrig ? "1" : "0"); } catch {}
+      const w = document.createTreeWalker(document.body, NodeFilter.SHOW_ELEMENT);
+      let n;
+      while ((n = w.nextNode())) {
+        if (n.__hyOwnTitle == null) continue;
+        if (showOrig && lang !== "zh") { if (!n.hasAttribute("title")) n.setAttribute("title", n.__hyOwnTitle); }
+        else if (n.getAttribute("title") === n.__hyOwnTitle) n.removeAttribute("title");
+      }
+      toast(showOrig ? "Original text tooltips: on" : "Original text tooltips: off");
+    } else if (e.code === "KeyL") {
       setLang(LANGS[(LANGS.indexOf(lang) + 1) % LANGS.length]);
     } else if (e.code === "KeyO") {
       setLang(lang === "zh" ? prevLang : "zh");
