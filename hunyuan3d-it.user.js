@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Hunyuan 3D Translator (EN/IT)
 // @namespace    https://github.com/amp-ita/hunyuan3d-it
-// @version      1.3.16
+// @version      1.3.17
 // @description  Translates the 3d.hunyuan.tencent.com interface into English or Italian (built-in dictionary, Chrome's on-device translator as fallback). Alt+Shift+L switches language.
 // @author       Ares9323
 // @match        https://3d.hunyuan.tencent.com/*
@@ -592,12 +592,12 @@ window.HY_DICT = {
   "移动速度": "Velocità di movimento",
   "拖拽速度": "Velocità di trascinamento",
   "回到原点": "Torna all'origine",
-  "导演模式": "Modalità regista",
+  "导演模式": "Schermo intero",
   "场景模式选择": "Modalità scena",
   "自由": "Libera",
   "潮酷少女": "Ragazza alla moda",
   "未来战士": "Guerriero del futuro",
-  "龙虾鹅宝": "Ochetta aragosta",
+  "龙虾鹅宝": "Pinguino aragosta",
   "可爱熊猫": "Panda tenero",
   "灵动企鹅": "Pinguino vivace",
   "星际机器人": "Robot interstellare",
@@ -609,7 +609,23 @@ window.HY_DICT = {
   "文字描述": "Descrizione testuale",
   "请写下更多反馈内容": "Scrivi qui il tuo feedback",
   "图片": "Immagine",
-  "提交": "Invia"
+  "提交": "Invia",
+  "角色设置参数": "Parametri del personaggio",
+  "角色大小": "Dimensione del personaggio",
+  "角色阴影": "Ombra del personaggio",
+  "衰减距离": "Distanza di attenuazione",
+  "最大深度": "Profondità massima",
+  "暗度": "Intensità dell'ombra",
+  "角色灯光调节": "Luci del personaggio",
+  "IBL强度": "Intensità IBL",
+  "环境光": "Luce ambientale",
+  "返回画廊模式": "Torna alla galleria",
+  "视场角FOV": "Campo visivo (FOV)",
+  "展开": "Espandi",
+  "收起": "Comprimi",
+  "使用WASD键移动": "Usa i tasti WASD per muoverti",
+  "单击并拖拽鼠标环顾四周": "Clicca e trascina col mouse per guardarti intorno",
+  "生成中，请稍候": "Generazione in corso, attendi"
 };
 
 // Dictionary Chinese -> English. Keys must match dict.js; add entries to both.
@@ -1136,12 +1152,12 @@ window.HY_DICT_EN = {
   "移动速度": "Movement speed",
   "拖拽速度": "Drag speed",
   "回到原点": "Back to origin",
-  "导演模式": "Director mode",
+  "导演模式": "Full screen",
   "场景模式选择": "Scene mode",
   "自由": "Free",
   "潮酷少女": "Trendy girl",
   "未来战士": "Future warrior",
-  "龙虾鹅宝": "Lobster gosling",
+  "龙虾鹅宝": "Lobster penguin",
   "可爱熊猫": "Cute panda",
   "灵动企鹅": "Lively penguin",
   "星际机器人": "Space robot",
@@ -1153,7 +1169,23 @@ window.HY_DICT_EN = {
   "文字描述": "Text description",
   "请写下更多反馈内容": "Write your feedback here",
   "图片": "Image",
-  "提交": "Submit"
+  "提交": "Submit",
+  "角色设置参数": "Character settings",
+  "角色大小": "Character size",
+  "角色阴影": "Character shadow",
+  "衰减距离": "Falloff distance",
+  "最大深度": "Max depth",
+  "暗度": "Darkness",
+  "角色灯光调节": "Character lighting",
+  "IBL强度": "IBL intensity",
+  "环境光": "Ambient light",
+  "返回画廊模式": "Back to gallery",
+  "视场角FOV": "Field of view (FOV)",
+  "展开": "Expand",
+  "收起": "Collapse",
+  "使用WASD键移动": "Use WASD to move",
+  "单击并拖拽鼠标环顾四周": "Click and drag to look around",
+  "生成中，请稍候": "Generating, please wait"
 };
 
 (() => {
