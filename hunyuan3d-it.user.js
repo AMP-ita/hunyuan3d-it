@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Hunyuan 3D Translator (EN/IT)
 // @namespace    https://github.com/amp-ita/hunyuan3d-it
-// @version      1.3.14
+// @version      1.3.15
 // @description  Translates the 3d.hunyuan.tencent.com interface into English or Italian (built-in dictionary, Chrome's on-device translator as fallback). Alt+Shift+L switches language.
 // @author       Ares9323
 // @match        https://3d.hunyuan.tencent.com/*
@@ -525,7 +525,52 @@ window.HY_DICT = {
   "按住 Ctrl 可临时切换为 Part 模式": "Tieni premuto Ctrl per passare temporaneamente alla modalità parte",
   "点击隐藏": "Fai clic per nascondere",
   "点击显示": "Fai clic per mostrare",
-  "笔刷已激活": "Pennello attivo"
+  "笔刷已激活": "Pennello attivo",
+
+  // --- Modello di mondo (World 2.1): generazione di scene, panorami, guide ---
+  "腾讯混元3D·世界模型": "Tencent Hunyuan 3D · Modello di mondo",
+  "世界生成": "Generazione del mondo",
+  "360°全景图": "Panorama a 360°",
+  "请描述你想要的3D场景...": "Descrivi la scena 3D che vuoi...",
+  "文生场景": "Testo in scena",
+  "图生场景": "Immagine in scena",
+  "Prompt指引": "Guida al prompt",
+  "随机": "Casuale",
+  "点击或拖拽图片至此处上传": "Fai clic o trascina qui un'immagine per caricarla",
+  "上传指引": "Guida al caricamento",
+  "全景图生": "Da panorama",
+  "World2.1模型": "Modello World 2.1",
+  "退出后可随时在「世界模型-创作」中查看哦": "Dopo l'uscita puoi ritrovarlo in qualsiasi momento in “Modello di mondo - Creazioni”",
+  "试试以下结构描述": "Prova a descrivere con questa struttura",
+  "场景类别": "Tipo di scena",
+  "沙漠、海面、房间等": "Deserto, mare, stanza, ecc.",
+  "场景特征": "Caratteristiche della scena",
+  "物体、天空等视觉描述": "Descrizione visiva di oggetti, cielo, ecc.",
+  "卡通/写实/油画风格等": "Stile cartoon, realistico, pittura a olio, ecc.",
+  "例如": "Per esempio",
+  "天门中断楚江开全景，碧绿江水在宏大峡谷间东流回旋，青山对峙呈现壮丽景观。真实风格，丰富光影，8K分辨率。": "Panorama della gola di Tianmen dove si apre il fiume Chu: acque verde smeraldo scorrono verso est e si avvolgono in un'immensa gola, tra montagne verdi che si fronteggiano in un paesaggio maestoso. Stile realistico, luci e ombre ricche, risoluzione 8K.",
+  "高质示例": "Esempi di buona qualità",
+  "分辨率不小于512*512": "Risoluzione di almeno 512×512",
+  "不包含人物，动物特写，尽可能少包含人物": "Niente persone né primi piani di animali; il meno persone possibile",
+  "避免输入画质差（模糊，过曝，带有水印）的图片": "Evita immagini di bassa qualità (sfocate, sovraesposte, con filigrana)",
+  "非真实世界拍摄图像较佳": "Meglio immagini non fotografate nel mondo reale",
+  "低质示例": "Esempi di bassa qualità",
+  "物体为主体": "Soggetto principale è un oggetto",
+  "存在水印或边框": "Con filigrana o bordi",
+  "存在人物": "Con persone",
+  "场景内容嘈杂": "Scena confusa",
+  "开阔生态园林，画面中央是一条蜿蜒向远方延伸的清澈河流，形成强烈的视觉引导线，前景是长满鲜花和绿草的平坦河岸，中景是河流两侧排列整齐的盛开樱花树，远景是蓝天白云和柔和的阳光，光线明亮，树木在草地上有清晰的投影，高质量3D渲染，皮克斯卡通风格，干净的材质，色彩明快鲜艳。": "Ampio parco naturale: al centro un fiume limpido serpeggia verso l'orizzonte creando una forte linea guida visiva; in primo piano una riva piana coperta di fiori ed erba verde, a metà distanza file ordinate di ciliegi in fiore lungo le sponde, sullo sfondo cielo azzurro, nuvole bianche e una luce solare morbida. Illuminazione brillante, ombre nette degli alberi sull'erba, render 3D di alta qualità, stile cartoon alla Pixar, materiali puliti, colori vivaci e luminosi.",
+  "点击或拖拽全景图至此处上传": "Fai clic o trascina qui un panorama per caricarlo",
+  "世界生成功能升级，几何结构更准确，场景视觉质量更高，支持全景图生成场景。": "La generazione del mondo è stata aggiornata: geometria più precisa, qualità visiva della scena più alta e generazione di scene da panorama.",
+  "图片格式支持 JPG/JPEG/PNG/WEBP，文件大小不超过50M": "Formati supportati: JPG/JPEG/PNG/WEBP, dimensione massima 50 MB",
+  "图片宽高比为 2:1，分辨率最低要求1920*960，最高限制7680*3840": "Proporzioni 2:1, risoluzione minima 1920×960, massima 7680×3840",
+  "不包含人物、动物特写，避免画面出现人物": "Niente persone né primi piani di animali; evita persone nell'immagine",
+  "请勿使用纯纹理图、纯色图": "Non usare immagini di sola texture o a tinta unita",
+  "避免使用天空、星空等画面占比较大图片": "Evita immagini in cui cielo o cielo stellato occupano gran parte dell'inquadratura",
+  "避免输入画质差（模糊，过曝，带有水印等）的图片": "Evita immagini di bassa qualità (sfocate, sovraesposte, con filigrana, ecc.)",
+  "纯纹理或纯色图": "Sola texture o tinta unita",
+  "天空或星空占比大": "Troppo cielo o cielo stellato",
+  "俯视或仰视视角": "Inquadratura dall'alto o dal basso"
 };
 
 // Dictionary Chinese -> English. Keys must match dict.js; add entries to both.
@@ -985,7 +1030,52 @@ window.HY_DICT_EN = {
   "按住 Ctrl 可临时切换为 Part 模式": "Hold Ctrl to temporarily switch to part mode",
   "点击隐藏": "Click to hide",
   "点击显示": "Click to show",
-  "笔刷已激活": "Brush active"
+  "笔刷已激活": "Brush active",
+
+  // --- World model (World 2.1): scene generation, panoramas, guides ---
+  "腾讯混元3D·世界模型": "Tencent Hunyuan 3D · World Model",
+  "世界生成": "World generation",
+  "360°全景图": "360° panorama",
+  "请描述你想要的3D场景...": "Describe the 3D scene you want...",
+  "文生场景": "Text to scene",
+  "图生场景": "Image to scene",
+  "Prompt指引": "Prompt guide",
+  "随机": "Random",
+  "点击或拖拽图片至此处上传": "Click or drag an image here to upload",
+  "上传指引": "Upload guide",
+  "全景图生": "From panorama",
+  "World2.1模型": "World 2.1 model",
+  "退出后可随时在「世界模型-创作」中查看哦": "After leaving, you can find it anytime in “World Model - Creations”",
+  "试试以下结构描述": "Try describing it with this structure",
+  "场景类别": "Scene type",
+  "沙漠、海面、房间等": "Desert, sea, room, etc.",
+  "场景特征": "Scene features",
+  "物体、天空等视觉描述": "Visual description of objects, sky, etc.",
+  "卡通/写实/油画风格等": "Cartoon, realistic, oil painting style, etc.",
+  "例如": "For example",
+  "天门中断楚江开全景，碧绿江水在宏大峡谷间东流回旋，青山对峙呈现壮丽景观。真实风格，丰富光影，8K分辨率。": "Panorama of the Tianmen gorge where the Chu river breaks through: emerald water flows east and swirls through a vast canyon, green mountains facing each other in a majestic landscape. Realistic style, rich light and shadow, 8K resolution.",
+  "高质示例": "Good examples",
+  "分辨率不小于512*512": "Resolution of at least 512×512",
+  "不包含人物，动物特写，尽可能少包含人物": "No people or animal close-ups; as few people as possible",
+  "避免输入画质差（模糊，过曝，带有水印）的图片": "Avoid low-quality images (blurry, overexposed, watermarked)",
+  "非真实世界拍摄图像较佳": "Images not photographed in the real world work best",
+  "低质示例": "Poor examples",
+  "物体为主体": "Object as the main subject",
+  "存在水印或边框": "Watermark or border",
+  "存在人物": "People present",
+  "场景内容嘈杂": "Cluttered scene",
+  "开阔生态园林，画面中央是一条蜿蜒向远方延伸的清澈河流，形成强烈的视觉引导线，前景是长满鲜花和绿草的平坦河岸，中景是河流两侧排列整齐的盛开樱花树，远景是蓝天白云和柔和的阳光，光线明亮，树木在草地上有清晰的投影，高质量3D渲染，皮克斯卡通风格，干净的材质，色彩明快鲜艳。": "Wide open natural park: in the center a clear river winds into the distance, forming a strong leading line; in the foreground a flat bank covered with flowers and green grass, in the midground neat rows of blooming cherry trees on both banks, in the background blue sky, white clouds and soft sunlight. Bright lighting, crisp tree shadows on the grass, high-quality 3D render, Pixar cartoon style, clean materials, bright vivid colors.",
+  "点击或拖拽全景图至此处上传": "Click or drag a panorama here to upload",
+  "世界生成功能升级，几何结构更准确，场景视觉质量更高，支持全景图生成场景。": "World generation upgraded: more accurate geometry, higher scene visual quality, and scene generation from panoramas.",
+  "图片格式支持 JPG/JPEG/PNG/WEBP，文件大小不超过50M": "Supported formats: JPG/JPEG/PNG/WEBP, max file size 50 MB",
+  "图片宽高比为 2:1，分辨率最低要求1920*960，最高限制7680*3840": "Aspect ratio 2:1, minimum resolution 1920×960, maximum 7680×3840",
+  "不包含人物、动物特写，避免画面出现人物": "No people or animal close-ups; avoid people in the image",
+  "请勿使用纯纹理图、纯色图": "Do not use pure texture or solid color images",
+  "避免使用天空、星空等画面占比较大图片": "Avoid images where sky or starry sky fills most of the frame",
+  "避免输入画质差（模糊，过曝，带有水印等）的图片": "Avoid low-quality images (blurry, overexposed, watermarked, etc.)",
+  "纯纹理或纯色图": "Pure texture or solid color",
+  "天空或星空占比大": "Too much sky or starry sky",
+  "俯视或仰视视角": "Top-down or low-angle view"
 };
 
 (() => {
