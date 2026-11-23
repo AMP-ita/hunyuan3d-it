@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Hunyuan 3D Translator (EN/IT)
 // @namespace    https://github.com/amp-ita/hunyuan3d-it
-// @version      1.3.15
+// @version      1.3.16
 // @description  Translates the 3d.hunyuan.tencent.com interface into English or Italian (built-in dictionary, Chrome's on-device translator as fallback). Alt+Shift+L switches language.
 // @author       Ares9323
 // @match        https://3d.hunyuan.tencent.com/*
@@ -570,7 +570,46 @@ window.HY_DICT = {
   "避免输入画质差（模糊，过曝，带有水印等）的图片": "Evita immagini di bassa qualità (sfocate, sovraesposte, con filigrana, ecc.)",
   "纯纹理或纯色图": "Sola texture o tinta unita",
   "天空或星空占比大": "Troppo cielo o cielo stellato",
-  "俯视或仰视视角": "Inquadratura dall'alto o dal basso"
+  "俯视或仰视视角": "Inquadratura dall'alto o dal basso",
+  "图片格式支持 JPG、JPEG、PNG、WEBP，分辦率最低要求512*512，文件大小不超过10M": "Formati supportati: JPG, JPEG, PNG, WEBP. Risoluzione minima 512×512, dimensione massima 10 MB",
+  "创作资产": "Crea asset",
+  "预计还需": "Tempo stimato rimanente",
+  "%d 分钟": "%d minuti",
+  "方向控制": "Movimento",
+  "冲刺 / 加速": "Scatto / Accelera",
+  "抬升 / 跳跃": "Sali / Salta",
+  "环顾四周": "Guardati intorno",
+  "特殊动作": "Azione speciale",
+  "视角翻转": "Inverti visuale",
+  "水平": "Orizzontale",
+  "垂直": "Verticale",
+  "选择切换角色模式添加个性化角色": "Passa alla modalità personaggio per aggiungere un personaggio personalizzato",
+  "知道了": "Ho capito",
+  "显示与相机参数": "Visualizzazione e parametri della camera",
+  "渲染画质": "Qualità di rendering",
+  "高清": "Alta qualità",
+  "流畅": "Fluida",
+  "移动速度": "Velocità di movimento",
+  "拖拽速度": "Velocità di trascinamento",
+  "回到原点": "Torna all'origine",
+  "导演模式": "Modalità regista",
+  "场景模式选择": "Modalità scena",
+  "自由": "Libera",
+  "潮酷少女": "Ragazza alla moda",
+  "未来战士": "Guerriero del futuro",
+  "龙虾鹅宝": "Ochetta aragosta",
+  "可爱熊猫": "Panda tenero",
+  "灵动企鹅": "Pinguino vivace",
+  "星际机器人": "Robot interstellare",
+  "深海精灵": "Spirito degli abissi",
+  "蓝羽飞鹦": "Pappagallo dalle piume blu",
+  "暖棕萌猫": "Gattino marrone",
+  "联系我们": "Contattaci",
+  "欢迎联系我们，留下您的宝贵建议！": "Contattaci e lasciaci i tuoi preziosi suggerimenti!",
+  "文字描述": "Descrizione testuale",
+  "请写下更多反馈内容": "Scrivi qui il tuo feedback",
+  "图片": "Immagine",
+  "提交": "Invia"
 };
 
 // Dictionary Chinese -> English. Keys must match dict.js; add entries to both.
@@ -1075,7 +1114,46 @@ window.HY_DICT_EN = {
   "避免输入画质差（模糊，过曝，带有水印等）的图片": "Avoid low-quality images (blurry, overexposed, watermarked, etc.)",
   "纯纹理或纯色图": "Pure texture or solid color",
   "天空或星空占比大": "Too much sky or starry sky",
-  "俯视或仰视视角": "Top-down or low-angle view"
+  "俯视或仰视视角": "Top-down or low-angle view",
+  "图片格式支持 JPG、JPEG、PNG、WEBP，分辦率最低要求512*512，文件大小不超过10M": "Supported formats: JPG, JPEG, PNG, WEBP. Minimum resolution 512×512, max file size 10 MB",
+  "创作资产": "Create assets",
+  "预计还需": "Estimated time left",
+  "%d 分钟": "%d minutes",
+  "方向控制": "Movement",
+  "冲刺 / 加速": "Sprint / Speed up",
+  "抬升 / 跳跃": "Rise / Jump",
+  "环顾四周": "Look around",
+  "特殊动作": "Special action",
+  "视角翻转": "Invert view",
+  "水平": "Horizontal",
+  "垂直": "Vertical",
+  "选择切换角色模式添加个性化角色": "Switch to character mode to add a custom character",
+  "知道了": "Got it",
+  "显示与相机参数": "Display and camera settings",
+  "渲染画质": "Render quality",
+  "高清": "HD",
+  "流畅": "Smooth",
+  "移动速度": "Movement speed",
+  "拖拽速度": "Drag speed",
+  "回到原点": "Back to origin",
+  "导演模式": "Director mode",
+  "场景模式选择": "Scene mode",
+  "自由": "Free",
+  "潮酷少女": "Trendy girl",
+  "未来战士": "Future warrior",
+  "龙虾鹅宝": "Lobster gosling",
+  "可爱熊猫": "Cute panda",
+  "灵动企鹅": "Lively penguin",
+  "星际机器人": "Space robot",
+  "深海精灵": "Deep sea sprite",
+  "蓝羽飞鹦": "Blue-feathered parrot",
+  "暖棕萌猫": "Brown kitten",
+  "联系我们": "Contact us",
+  "欢迎联系我们，留下您的宝贵建议！": "Get in touch and share your valuable suggestions!",
+  "文字描述": "Text description",
+  "请写下更多反馈内容": "Write your feedback here",
+  "图片": "Image",
+  "提交": "Submit"
 };
 
 (() => {
